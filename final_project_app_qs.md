@@ -14,14 +14,16 @@
 * When a user is creating their account, they'll need to add a username, a pokemon region, and optionally a photo to have as a 'user profile image'.
 * an additional form can be used to find information about regions, towns, and pokemon (which can be used to help build up your pokemon team). where you provide a name of a region, town, or pokemon or ask for a certain type of pokemon (like grass type) and then results will be sent back in a new view to the user.
 * A form for logging in once an account has already been made.
+* A form for inputting your email if you've forgotten your password.
 
 * **How many fields will your form have? What's an example of some data user might enter into it?**
-* the first form for creating a provile will need 3 forms, 2 required and 1 optional. The username will need to be a text field, the region can be a dropdown menu to make sure that it's spelt correctly, and the third will be a file upload field (not including the submit field).
-* the second form will need likely 4 fields, where at least one is required, but the first through third would be a specific name, the fourth would be a pokemon type, so that you can choose to 'search' by one of them.
-* the third form will have 2 fields, where the first is the username and the second is the password.
+* the first form for creating a profile will need 6 fields, 5 required and 1 optional. The username will need to be a text field, there will be 2 password fields, one to set it and one to confirm. The region can be a dropdown menu to make sure that it's spelt correctly, and the fifth will be a file upload field (not including the submit field). The final field is submit.
+* the second form will need likely 5 fields, where at least one is required, but the first through third would be a specific name, the fourth would be a pokemon type, so that you can choose to 'search' by one of them. The fifth is submit
+* the third form will have 3 fields, where the first is the username, the second is the password, and third is submit.
+* the fourth form will have 3 fields, the first is an email associated with an account, the second is submit.
 
 * **After a user enters data into the form, what happens? Does that data help a user search for more data? Does that data get saved in a database? Does that determine what already-saved data the user should see?**
-* The first form saves the data into a database. The second form helps the user search, so it won't necessarily get data from a database or save it into one, but it does determine what the user should see next. The third form checks to see that the data is acurate (according to the what is stored in the database) and determines what the user should see once they log in and what data should be gathered from the databases.
+* The first form saves the data into a database. The second form helps the user search, so it won't necessarily get data from a database or save it into one, but it does determine what the user should see next. The third form checks to see that the data is acurate (according to the what is stored in the database) and determines what the user should see once they log in and what data should be gathered from the databases. The forth form sends an email to reset the password.
 
 * **What models will you have in your application?**
 * I'll need a model for the user, a model for pokemon, a relational database to connect users to pokemon, a model for regions, a model for towns, a relational database between regions and towns, and a relational database between towns and pokemon (potentially a relational database between regions and pokemon, if I want to build up that functionality).
@@ -47,10 +49,10 @@
 ## The Pages
 
 * **How many pages (routes) will your application have?**
-* 1 for the intial page, 1 for the form to make a user, 1 for logging in (could be the initial page), 1 for looking at user information, 1 for looking up information on a pokemon, town, or region, 1 for listing pokemon to choose from, 1 for a speific pokemon, 1 for region or town information, 1 for if results could not be found, 1 to log out. Looks like 10 without counting error pages.
+* 1 for the intial page, 1 for the form to make a user, 1 for logging in (could be the initial page), 1 for looking at user information, 1 for looking up information on a pokemon, town, or region, 1 for listing pokemon to choose from, 1 for a speific pokemon, 1 for region or town information, 1 for if results could not be found, 1 to log out, and 1 for password resetting. Looks like 11 without counting error pages.
 
 * **How many different views will a user be able to see, NOT counting errors?**
-* 11 different views (if the 1 for region or town information counts as different views though the page may be the same), not including error pages.
+* 12 different views (if the 1 for region or town information counts as different views though the page may be the same), not including error pages.
 
 * **Basically, what will a user see on each page / at each route? Will it change depending on something else -- e.g. they see a form if they haven't submitted anything, but they see a list of things if they have?**
 * see above answer for each page/route. The option to add a pokemon to one's team is only viewable if the user is logged in.
